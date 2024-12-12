@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.body {
+  background-color: rgb(138 28 28);
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 1em;
+}
+.heading {
+  font-size: 2em;
+}
+#div-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  margin-top: 1em;
+}
+#restart {
+  border: none;
+  padding: 10px 30px;
+  background-color: #3e0a0a;
+  color: aliceblue;
+  font-size: 1em;
+  font-family: inherit;
+  border-radius: 1.5em;
+  margin-top: 20px;
+}
+.card {
+  width: 5em;
+  height: 5em;
+  perspective: 50em;
+}
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.card-front {
+  background-image: url("cardFront.jpg");
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  border-radius: 10px;
+  font-size: 2.5em;
+  color: aliceblue;
+  box-shadow: 0.05em 0.05em 0.05em 0.05em black;
+}
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(230, 230, 255);
+  border-radius: 10px;
+  font-size: 2.5em;
+  color: black;
+  box-shadow: 0.05em 0.05em 0.05em 0.05em black;
+  user-select: none;
+}
+.card.visible .card-inner {
+  transform: rotateY(180deg);
+}
+.card-back {
+  transform: rotateY(180deg);
+}
+#timer {
+  height: 50px;
+  width: 190px;
+  border: 3.5px solid;
+  font-size: 40px;
+  margin: auto;
+  padding: initial;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+#winner {
+  margin-top: 15px;
+}
+/* .card-back-win {
+  display:;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(230, 230, 255);
+  border-radius: 10px;
+  font-size: 2.5em;
+  color: black;
+  box-shadow: 0.05em 0.05em 0.05em 0.05em black;
+  user-select: none;
+} */
